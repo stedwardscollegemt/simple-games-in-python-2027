@@ -10,12 +10,17 @@ print("Do we have more coins than monsters?")
 answer = coins > monsters
 print(answer)
 
-# TODO: display question "Are monsters equal to coins?"
+# display question "Are monsters equal to coins?"
+print("Are monsters equal to coins?")
+answer = coins == monsters
+print(answer)
 
-# TODO: update the answer variable with the correct boolean expression that compares coins and monster
+# less than
+print("Are monsters less than coins?")
+answer = monsters < coins
+print(answer)
 
-# TODO: print answer value
-
-# TODO: less than
-
-# TODO: greater or equal to
+# greater or equal to
+print("Are monsters greater or equal to coins?")
+answer = monsters >= coins
+print(answer)
