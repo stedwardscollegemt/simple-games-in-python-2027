@@ -1,3 +1,4 @@
+
 # ------ import modules section -----------------------------------------
 
 # ------ define functions section ---------------------------------------
@@ -14,7 +15,7 @@ def word_puzzle():
 # ------ algorithm steps section ----------------------------------------
 
 # declare a list variable called all_words that contains words the player can find in the puzzle e.g., "BALL", and "BOYE"
-all_words = ["SHOE", "HAT", "COW", "BELT", "CAT", "TOYS", "EAR", "BALL", "BATS", "BED", "BOY", "BIG", "MICE"]
+all_words = ["SHOE", "HAT", "COW", "BELT", "CAT", "TOYS", "EAR", "BALL", "BATS", "BED", "BOY", "BIG", "MICE", ""]
 
 print("*** Weclome to Word Play ***")
 print("****************************")
@@ -22,12 +23,16 @@ print("")
 
 word_puzzle()
 
-# TODO: display an instruction to the user e.g. "Can you find all the words?"
+# display an instruction to the user e.g. "Can you find all the words?"
+print("Can you find all the words?")
 
-# TODO: ask the user to enter a word e.g., "Enter a word: "
+# ask the user to enter a word e.g., "Enter a word: "
+user_word = input("Enter a word:").upper()
 
-# TODO: use the list function count() to see if the user input is a good guess, store it in a variable called hit
+# use the list function count() to see if the user input is a good guess, store it in a variable called hit
+hit = all_words.count(user_word)
 
-# TODO: display the value of the hit variable
+# display the value of the hit variable
+print(hit)
 
 
