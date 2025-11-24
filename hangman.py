@@ -1,4 +1,5 @@
 # ------ import modules section -----------------------------------------
+import random
 
 # ------ define functions section ---------------------------------------
 def title():
@@ -9,42 +10,51 @@ def title():
     print("|_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|")
     print("                   |___/                       ")
 
+def update_user_hint(letter, secret_word, user_hint):
+    pos = 0
+    while pos < len(secret_word) - 1:
+        if secret_word[pos] == letter:
+            user_hint[pos] = letter
+        pos = pos + 1
+    return user_hint
+
 # ------ algorithm steps section ----------------------------------------
 
 title()
 
-secret_word = "secret" # this is a string variable
-user_hint = ["_", "_", "_", "_", "_"] # this is a list variable
+list_secret_words = ['sneaky', 'fairy', 'furniture', 'python', 'literature', 'hangman']
+secret_word = random.choice(list_secret_words)
+user_hint = ['_'] * len(secret_word) # use multiplication to make a list of any length with the same element
 user_guesses = 0 # this is an integer variable
-max_guesses = 8
+lives = 8
 
 print("Let us play Hangman. You need to guess the word I am thinking of.") # this is a simple output statement
-print("Hint: The word has", len(secret_word), "letters") # an output statement with joining (,)
+print("Hint: the word has", len(secret_word), "letters.")
 print(user_hint) # this is how we can display variable values
+print("You have", lives, "lives.")
 
-user_guess = input("Guess a letter or the word:") # this is an input statement
-count = secret_word.count(user_guess) # an example using a string function
+while True:
+    # win the game
+    win = '_' not in user_hint
+    if win:
+        print("Well done. You guessed!")
+        break
 
-print("Did you guess a letter in the word?")
-answer = count > 0 # an example of a Boolean expression with a conditional operator
-print(answer)
-
-# simple if/else statement (two branches)
-if count > 0:
-    print("You guessed a letter or the word.")
-else:
-    print("You did not guess anything!")
-
-# if/elif/else statement (three branches)
-if len(user_guess) == 1:
-    print("You tried to guess a letter.")
-elif len(user_guess) == len(secret_word):
-    print("You tried to guess the word.")
-else:
-    print("We don't know what you are doing!")
-
-
-
+    # lose all lives
+    lose = lives == 0
+    if lose:
+        print("Sorry, you have no lives left. The word was: ", secret_word)
+        break
+    
+    # usual game update
+    print(user_hint)
+    user_guess = input("Guess a letter:")
+    user_guesses = user_guesses + 1
+    if secret_word.count(user_guess) > 0:
+        print("Good guess")
+        update_user_hint(user_guess, secret_word, user_hint)
+    else:
+        lives = lives - 1
 
 
 
