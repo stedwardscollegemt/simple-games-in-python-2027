@@ -20,6 +20,46 @@ print("[A] Humanity [B] Household [C] Honour [D] Health")
 player_guess = input("Enter your guess: ")
 correct_answer = "D"
 
-# TODO: if player_guess is equal to (==) correct_answer then level up, else, game is over
+# if player_guess is equal to (==) correct_answer then level up, else, game is over
+if player_guess == correct_answer:
+    level = level + 1
+else:
+    print("Wrong! Game over.")
 
-# TODO: code for a level 1 question
+
+# code for a level 1 question
+if level == 1:
+    print("Here is your second question for " + money_tree[level] + "...")
+    print("What is the capital city of Morocco?")
+    print("[A] Valletta [B] Rabat [C] Qatar [D] Paris")
+    player_guess = input("Enter your guess: ")
+    correct_answer = "B"
+
+    if player_guess == correct_answer:
+        level = level + 1
+    else:
+        print("Wrong! Game over.")
+
+if level == 2:
+    print("Here is your second question for " + money_tree[level] + "...")
+    print("Who was the first president of the US?")
+    print("[A] George Washingtom [B] Thomas Jefferson [C] Charlie Kirk [D] Robert Abela")
+    player_guess = input("Enter your guess: ")
+    correct_answer = "A"
+
+    if player_guess == correct_answer:
+        level = level + 1
+    else:
+        print("Wrong! Game over.")
+
+if level == 3:
+    print("Here is your fourth question for " + money_tree[level] + "...")
+    print("Who won the 2002 World Cup?")
+    print("[A] Brazil [B] Italy [C] Argentina [D] France")
+    player_guess = input("Enter your guess: ")
+    correct_answer = "A"
+
+    if player_guess == correct_answer:
+        level = level + 1
+    else:
+        print("Wrong! Game Over.")

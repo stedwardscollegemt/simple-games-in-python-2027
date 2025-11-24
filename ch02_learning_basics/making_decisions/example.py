@@ -25,9 +25,10 @@ if player_one == player_two:
 if player_one == "rock" and player_two == "scissors":
     print("Rock breaks scissors. Player one wins!")
 
-# player_one is paper and player_two is scissors
-if player_one == "paper" and player_two == "scissors":
-    print("Paper covers scissors. Player two wins!")
+# player_one is paper and player_two is rock
+if player_one == "paper" and player_two == "rock":
+    print("Paper covers rock. Player one wins!")
 
-# TODO: can you complete more combinations?
-# your code ...
+# can you complete more combinations?
+if player_one == "scissors" and player_two == "paper":
+    print("Scissors cuts paper. Player one wins!")
